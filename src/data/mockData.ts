@@ -1,3 +1,5 @@
+import type { JobRow } from "../types/types";
+
 export const mockData: JobRow[] = Array.from({ length: 50 }, (_, i) => {
     const data: JobRow = {};
   
