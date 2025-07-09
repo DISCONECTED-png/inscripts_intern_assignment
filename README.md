@@ -1,69 +1,46 @@
-# React + TypeScript + Vite
+# 📊 Spreadsheet Table Interface - React App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a fully responsive, spreadsheet-style table interface built with **React**, **TypeScript**, and **@tanstack/react-table v8**. It includes dynamic headers, editable cells, custom cell rendering, column resizing, and mock data populated from a custom type.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
 
-## Expanding the ESLint configuration
+- 📐 **Resizable Columns** — Drag to resize columns like a spreadsheet
+- 📝 **Editable Cells** — Click and update any cell inline
+- 🎨 **Custom Header Styling** — Color-coded headers for specific fields
+- 🧩 **Conditional Cell Rendering** — Status and Priority badges
+- 🧑 **Assigned Column Highlight** — Distinct background color
+- 🔢 **Row Indexing** — Leftmost column shows row number
+- 📁 **Mock Data** — Pre-seeded data for development
+- ⚙️ **Responsive Design** — Works across screen sizes
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 🛠️ Technologies Used
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+- React
+- TypeScript
+- TailwindCSS
+- @tanstack/react-table v8
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+---
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 📂 Project Structure
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+src/
+├── components/
+│ └── SpreadsheetTable.tsx // Main spreadsheet component
+├── data/
+│ └── mockData.ts // Seeded mock data for the table
+├── types/
+│ └── types.ts // Type definition for a table row (JobRow)
+├── App.tsx
+└── index.tsx
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+
+## 📦 Installation
+
+- git clone https://github.com/DISCONECTED-png/inscripts_intern_assignment.git
+- cd spreadsheet-interface
+- npm install
