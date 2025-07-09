@@ -67,7 +67,7 @@ const SpreadsheetTable: React.FC = () => {
     (rowIndex: number, columnId: string, value: string) => {
       setData((prev) => {
         const updated = [...prev];
-        (updated[rowIndex] as JobRow)[columnId as keyof JobRow] = value;
+        (updated[rowIndex] as any)[columnId] = value;
         return updated;
       });
     },
@@ -122,7 +122,8 @@ const SpreadsheetTable: React.FC = () => {
         ),
         cell: (info) => (
           <EditableCell
-            value={info.getValue()}
+            value={String(info.getValue() ?? "")}
+
             rowIndex={info.row.index}
             columnId={info.column.id}
             onChange={handleChange}
@@ -150,7 +151,8 @@ const SpreadsheetTable: React.FC = () => {
         ),
         cell: (info) => (
           <EditableCell
-            value={info.getValue()}
+            value={String(info.getValue() ?? "")}
+
             rowIndex={info.row.index}
             columnId={info.column.id}
             onChange={handleChange}
@@ -178,7 +180,8 @@ const SpreadsheetTable: React.FC = () => {
         ),
         cell: (info) => (
           <EditableCell
-            value={info.getValue()}
+            value={String(info.getValue() ?? "")}
+
             rowIndex={info.row.index}
             columnId={info.column.id}
             onChange={handleChange}
@@ -208,7 +211,7 @@ const SpreadsheetTable: React.FC = () => {
           const val = info.getValue();
           return val ? <StatusBadge status={val} /> : (
             <EditableCell
-              value={val}
+            value={String(val ?? "")}
               rowIndex={info.row.index}
               columnId={info.column.id}
               onChange={handleChange}
@@ -237,7 +240,8 @@ const SpreadsheetTable: React.FC = () => {
         ),
         cell: (info) => (
           <EditableCell
-            value={info.getValue()}
+            value={String(info.getValue() ?? "")}
+
             rowIndex={info.row.index}
             columnId={info.column.id}
             onChange={handleChange}
@@ -266,7 +270,8 @@ const SpreadsheetTable: React.FC = () => {
         cell: (info) => (
 
           <EditableCell
-            value={info.getValue()}
+            value={String(info.getValue() ?? "")}
+
             rowIndex={info.row.index}
             columnId={info.column.id}
             onChange={handleChange}
@@ -292,7 +297,7 @@ const SpreadsheetTable: React.FC = () => {
           }
           return (
             <EditableCell
-              value={val}
+            value={String(val ?? "")}
               rowIndex={info.row.index}
               columnId={info.column.id}
               onChange={handleChange}
@@ -304,7 +309,8 @@ const SpreadsheetTable: React.FC = () => {
         header: "Due Date",
         cell: (info) => (
           <EditableCell
-            value={info.getValue()}
+            value={String(info.getValue() ?? "")}
+
             rowIndex={info.row.index}
             columnId={info.column.id}
             onChange={handleChange}
@@ -315,7 +321,8 @@ const SpreadsheetTable: React.FC = () => {
         header: "Est. Value",
         cell: (info) => (
           <EditableCell
-            value={info.getValue()}
+            value={String(info.getValue() ?? "")}
+
             rowIndex={info.row.index}
             columnId={info.column.id}
             onChange={handleChange}
